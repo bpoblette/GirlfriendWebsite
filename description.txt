@@ -1,0 +1,6 @@
+This file will be used to outline the idea for this project:
+
+First, it starts off with a basic text chat which asks GF if she loves me. 
+The idea is that this will throw her off and make her think I don't have some masterful program working. 
+
+Second, When she answers yes, start up the local server of the website. 
