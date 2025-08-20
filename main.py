@@ -1,5 +1,6 @@
 import subprocess
 import random
+import time
 
 def main():
   love = False
@@ -7,13 +8,15 @@ def main():
     answer = input("Do you love me? type yes or no: ")
     if(answer == "yes"):
       love = True
+      print("You're cute :)")
+      time.sleep(5)
       try:
         process = subprocess.Popen(["node index.js"], shell=True)
         process.wait()
       except Exception as e:
         print(f"An error occurred: {e}")
     else:
-      num = random.randint(0, 6)
+      num = random.randint(0, 5)
       print(num)
       match num:
         case 0:
@@ -28,8 +31,6 @@ def main():
           print("Stinky poo 💩")
         case 5:
           print("One A 👊")
-        case 6:
-          print("")
 
 if __name__ == "__main__":
   main()
