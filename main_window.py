@@ -1,4 +1,4 @@
-from PyQt6.QtWidgets import QApplication, QWidget, QMainWindow, QPushButton
+from PyQt6.QtWidgets import QApplication, QWidget, QMainWindow, QPushButton, QLabel
 import random
 
 class MainWindow(QMainWindow):
@@ -7,10 +7,12 @@ class MainWindow(QMainWindow):
     super().__init__()
 
     self.setWindowTitle("My Girlfriend App")
-    button = QPushButton("Press Me!")
-    button.setCheckable(True)
-    self.setCentralWidget(button)
-    button.clicked.connect(self.no_button_clicked)
+    label =  QLabel("Do you love me?")
+    yesButton = QPushButton("Yes")
+    noButton = QPushButton("No")
+    noButton.setCheckable(True)
+    self.setCentralWidget(noButton)
+    noButton.clicked.connect(self.no_button_clicked)
 
   def no_button_clicked(self):
     num = random.randint(0, 5)
