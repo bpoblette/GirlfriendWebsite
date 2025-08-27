@@ -1,5 +1,7 @@
 from PyQt6.QtWidgets import QApplication, QWidget, QMainWindow, QPushButton, QLabel
 import random
+import time
+import subprocess
 
 class MainWindow(QMainWindow):
 
@@ -7,28 +9,46 @@ class MainWindow(QMainWindow):
     super().__init__()
 
     self.setWindowTitle("My Girlfriend App")
-    label =  QLabel("Do you love me?")
-    yesButton = QPushButton("Yes")
-    noButton = QPushButton("No")
-    noButton.setCheckable(True)
-    self.setCentralWidget(noButton)
-    noButton.clicked.connect(self.no_button_clicked)
+    self.label =  QLabel("Do you love me?")
+    
+    self.yesButton = QPushButton("Yes")
+    self.yesButton.setCheckable(True)
+
+    self.noButton = QPushButton("No")
+    self.noButton.setCheckable(True)
+
+    #set the positions of the widgets
+    self.setCentralWidget(self.noButton)
+
+    #connecting the buttons to methods
+    self.noButton.clicked.connect(self.no_button_clicked)
+    self.yesButton.clicked.connect(self.yes_button_clicked)
+
+
+  def yes_button_clicked(self):
+    self.label.setText("You're cute :)") #change this so that the label updates its text
+    time.sleep(5)
+    try:
+      process = subprocess.Popen(["node", "index.js"], shell=False)
+      process.wait()
+    except Exception as e:
+      print(f"An error occurred: {e}")
 
   def no_button_clicked(self):
     num = random.randint(0, 5)
     match num:
       case 0:
-        print("You're so silly 😛")
+        self.label.setText("You're so silly 😛")
       case 1:
-        print("You hate me 😖")
+        self.label.setText("You hate me 😖")
       case 2:
-        print("I'm taking Brandito back 😠")
+        self.label.setText("I'm taking Brandito back 😠")
       case 3:
-        print("You have lost cuddle privileges 😤")
+        self.label.setText("You have lost cuddle privileges 😤")
       case 4:
-        print("Stinky poo 💩")
+        self.label.setText("Stinky poo 💩")
       case 5:
-        print("One A 👊")
+        self.label.setText("One A 👊")
 
 app = QApplication([])
 

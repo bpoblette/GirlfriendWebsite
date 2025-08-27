@@ -11,7 +11,7 @@ def main():
       print("You're cute :)")
       time.sleep(5)
       try:
-        process = subprocess.Popen(["node index.js"], shell=True)
+        process = subprocess.Popen(["node", "index.js"], shell=False)
         process.wait()
       except Exception as e:
         print(f"An error occurred: {e}")
