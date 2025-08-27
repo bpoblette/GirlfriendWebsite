@@ -1,7 +1,10 @@
-from PyQt6.QtWidgets import QApplication, QWidget, QMainWindow, QPushButton, QLabel
 import random
 import time
 import subprocess
+from layout_colorwidget import Color
+from PyQt6.QtWidgets import QApplication, QWidget, QMainWindow, QPushButton, QLabel, QVBoxLayout 
+
+
 
 class MainWindow(QMainWindow):
 
@@ -9,8 +12,17 @@ class MainWindow(QMainWindow):
     super().__init__()
 
     self.setWindowTitle("My Girlfriend App")
+    color = Color("light blue")
+    layout = QVBoxLayout()
+    layout.addWidget(color)
+    widget = QWidget()
+    widget.setLayout(layout)
+
     self.label =  QLabel("Do you love me?")
-    
+    font = self.label.font()
+    font.setPointSize(30)
+    self.label.setFont(font)
+
     self.yesButton = QPushButton("Yes")
     self.yesButton.setCheckable(True)
 
@@ -18,7 +30,7 @@ class MainWindow(QMainWindow):
     self.noButton.setCheckable(True)
 
     #set the positions of the widgets
-    self.setCentralWidget(self.noButton)
+    self.setCentralWidget(widget)
 
     #connecting the buttons to methods
     self.noButton.clicked.connect(self.no_button_clicked)
