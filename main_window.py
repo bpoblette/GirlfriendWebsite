@@ -2,7 +2,8 @@ import random
 import time
 import subprocess
 from layout_colorwidget import Color
-from PyQt6.QtWidgets import QApplication, QWidget, QMainWindow, QPushButton, QLabel, QVBoxLayout 
+from PyQt6.QtWidgets import QApplication, QWidget, QMainWindow, QPushButton, QLabel, QVBoxLayout, QHBoxLayout
+from PyQt6.QtGui import QFont
 
 
 
@@ -12,22 +13,33 @@ class MainWindow(QMainWindow):
     super().__init__()
 
     self.setWindowTitle("My Girlfriend App")
-    color = Color("light blue")
-    layout = QVBoxLayout()
-    layout.addWidget(color)
+    self.vLayout = QVBoxLayout()
+    hLayout = QHBoxLayout()
     widget = QWidget()
-    widget.setLayout(layout)
 
     self.label =  QLabel("Do you love me?")
-    font = self.label.font()
+    font = QFont("Segoe UI Emoji")
     font.setPointSize(30)
     self.label.setFont(font)
+    self.label2 = QLabel()
+    self.label2.setFont(font)
+    self.label2.hide()
 
     self.yesButton = QPushButton("Yes")
     self.yesButton.setCheckable(True)
 
     self.noButton = QPushButton("No")
     self.noButton.setCheckable(True)
+
+    #adding widgets to layout
+    self.vLayout.addWidget(self.label)
+    self.vLayout.addWidget(self.label2)
+    hLayout.addWidget(self.yesButton)
+    hLayout.addWidget(self.noButton)
+    self.vLayout.addLayout(hLayout)
+    widget.setLayout(self.vLayout)
+
+
 
     #set the positions of the widgets
     self.setCentralWidget(widget)
@@ -39,7 +51,6 @@ class MainWindow(QMainWindow):
 
   def yes_button_clicked(self):
     self.label.setText("You're cute :)") #change this so that the label updates its text
-    time.sleep(5)
     try:
       process = subprocess.Popen(["node", "index.js"], shell=False)
       process.wait()
@@ -48,19 +59,20 @@ class MainWindow(QMainWindow):
 
   def no_button_clicked(self):
     num = random.randint(0, 5)
+    self.label2.show()
     match num:
       case 0:
-        self.label.setText("You're so silly 😛")
+        self.label2.setText("You're so silly 😛")
       case 1:
-        self.label.setText("You hate me 😖")
+        self.label2.setText("You hate me 😖")
       case 2:
-        self.label.setText("I'm taking Brandito back 😠")
+        self.label2.setText("I'm taking Brandito back 😠")
       case 3:
-        self.label.setText("You have lost cuddle privileges 😤")
+        self.label2.setText("You have lost cuddle privileges 😤")
       case 4:
-        self.label.setText("Stinky poo 💩")
+        self.label2.setText("Stinky poo 💩")
       case 5:
-        self.label.setText("One A 👊")
+        self.label2.setText("One A 👊")
 
 app = QApplication([])
 
