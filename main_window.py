@@ -3,7 +3,8 @@ import time
 import subprocess
 from layout_colorwidget import Color
 from PyQt6.QtWidgets import QApplication, QWidget, QMainWindow, QPushButton, QLabel, QVBoxLayout, QHBoxLayout
-from PyQt6.QtGui import QFont
+from PyQt6.QtGui import QFont, QScreen
+from PyQt6.QtCore import Qt
 
 
 
@@ -11,25 +12,30 @@ class MainWindow(QMainWindow):
 
   def __init__(self):
     super().__init__()
-
+    self.setFixedSize(1000, 400)
+    self.center_window()
     self.setWindowTitle("My Girlfriend App")
     self.vLayout = QVBoxLayout()
     hLayout = QHBoxLayout()
     widget = QWidget()
 
     self.label =  QLabel("Do you love me?")
-    font = QFont("Segoe UI Emoji")
+    font = QFont("Noto Color Emoji")
     font.setPointSize(30)
     self.label.setFont(font)
+    self.label.setAlignment(Qt.AlignmentFlag.AlignCenter)
+
     self.label2 = QLabel()
     self.label2.setFont(font)
+    self.label2.setFixedHeight(50)
+    self.label2.setAlignment(Qt.AlignmentFlag.AlignCenter)
     self.label2.hide()
 
     self.yesButton = QPushButton("Yes")
-    self.yesButton.setCheckable(True)
+    self.yesButton.setCheckable(False) 
 
     self.noButton = QPushButton("No")
-    self.noButton.setCheckable(True)
+    self.noButton.setCheckable(False)
 
     #adding widgets to layout
     self.vLayout.addWidget(self.label)
@@ -73,6 +79,13 @@ class MainWindow(QMainWindow):
         self.label2.setText("Stinky poo 💩")
       case 5:
         self.label2.setText("One A 👊")
+
+  def center_window(self):
+    screen = self.screen().availableGeometry()
+    window = self.frameGeometry()
+    window.moveCenter(screen.center())
+    self.move(window.topLeft())
+    
 
 app = QApplication([])
 
