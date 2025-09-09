@@ -1,12 +1,9 @@
 import random
-import time
 import subprocess
 from layout_colorwidget import Color
 from PyQt6.QtWidgets import QApplication, QWidget, QMainWindow, QPushButton, QLabel, QVBoxLayout, QHBoxLayout
 from PyQt6.QtGui import QFont, QScreen
-from PyQt6.QtCore import Qt
-
-
+from PyQt6.QtCore import Qt, QTimer
 
 class MainWindow(QMainWindow):
 
@@ -45,8 +42,6 @@ class MainWindow(QMainWindow):
     self.vLayout.addLayout(hLayout)
     widget.setLayout(self.vLayout)
 
-
-
     #set the positions of the widgets
     self.setCentralWidget(widget)
 
@@ -54,12 +49,16 @@ class MainWindow(QMainWindow):
     self.noButton.clicked.connect(self.no_button_clicked)
     self.yesButton.clicked.connect(self.yes_button_clicked)
 
-
   def yes_button_clicked(self):
     self.label.setText("You're cute :)") #change this so that the label updates its text
+    def wait_and_close_browser():
+      self.close()
+      url = "http://localhost:3000"
+      subprocess.Popen(["explorer.exe", url])
+
     try:
-      process = subprocess.Popen(["node", "index.js"], shell=False)
-      process.wait()
+      subprocess.Popen(["node", "index.js"], shell=False)
+      QTimer.singleShot(2000, wait_and_close_browser)
     except Exception as e:
       print(f"An error occurred: {e}")
 
@@ -85,7 +84,6 @@ class MainWindow(QMainWindow):
     window = self.frameGeometry()
     window.moveCenter(screen.center())
     self.move(window.topLeft())
-    
 
 app = QApplication([])
 
