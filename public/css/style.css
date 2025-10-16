@@ -1,8 +1,8 @@
 /* Nav section */
 nav {
   padding: 10px 20px;
-  background-color:darkgoldenrod;
-  border-radius: 15px;
+  background-color: rgb(156, 87, 8);
+  border-radius: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -36,5 +36,49 @@ nav {
 
 .nav-middle a:hover{
   color:burlywood;
-  border-bottom: 2px solid powderblue;
+  border-bottom: 2px solid burlywood;
+}
+
+/* Top Header Section  Home Page*/
+.header-home{
+  text-align: center;
+  padding: 60px;
+  background-color: goldenrod;
+  border-radius: 10px;
+  color: black;
+  font-family: Baskerville Old Face;
+}
+
+/* Page background styles*/
+
+.background{
+  background-color: rgb(250, 241, 230);
+}
+
+/*home image styling*/
+.home-img{
+  display: block;
+  border-radius: 8px 8px 0 0;
+  width: 100%;
+  height: auto;
+}
+
+/*polaroid settings*/
+div.polaroid {
+  margin: 40px auto 25px auto;
+  display: block;
+  overflow: hidden;
+  padding: 0;
+  background-color: white;
+  width: 30%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin-bottom: 25px;
+  min-width: 200px;
+  text-align: center;
+  border-radius: 8px 8px 0 0;
+}
+
+div.container{
+  padding: 10px 20px;
+  text-align: center;
 }
