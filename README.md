@@ -5,6 +5,14 @@ This project has several goals:
 * learn node.js
 * practice and learn html and css
 
+This project has 2 main components:
+## GUI
+To run this project: 
+1. Run python3 main_window
+2. click yes when prompted
+
+Clicking yes will open a link to the website. For now it opens local host but eventually it will open to the hosted website
+## Website
 My girlfriend loves making cute artsy gifts for me. For our anniversary, she ended up making a cute scrapbook cataloging our first year together.
 In a similar vein, I want my website to reflect our amazing journey together. To do this, this project will have:
 * A home page
