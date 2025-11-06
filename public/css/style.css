@@ -5,64 +5,127 @@ body {
 }
 
 /* Nav section */
+/* General Nav Styles */
 nav {
-  padding: 10px 20px;
+  padding: 1vw 2vw;
   background-color: rgb(156, 87, 8);
-  border-radius: 10px;
+  border-radius: 1vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: sticky;
   top: 0;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 1000;
 }
 
-.nav-left{
+/* Left Side */
+.nav-left {
   color: white;
   font-weight: bold;
+  font-size: 1.2rem;
 }
 
+/* Middle Section */
 .nav-middle {
   list-style: none;
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content:center;
-  gap: 20px;
-  position:absolute;
+  justify-content: center;
+  align-items: center;
+  gap: 2vw;
+  position: absolute;
   left: 50%;
   transform: translateX(-50%);
 }
 
-.nav-middle a{
+.nav-middle a {
   color: white;
   text-decoration: none;
   font-weight: bold;
   transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
-.nav-middle a:hover{
-  color:burlywood;
+.nav-middle a:hover {
+  color: burlywood;
   border-bottom: 2px solid burlywood;
 }
 
+/* Right Section */
 .nav-right {
   color: white;
   font-weight: bold;
-  height: auto;
-  gap: 8px;
   display: flex;
   align-items: center;
+  gap: 1vw;
 }
 
 .nav-right img {
-  height: 20px;
+  height: 2vw;
   width: auto;
+  transition: all 0.3s ease;
 }
 
-.nav-right img:hover{
-    transform: scale(1.2);
-    filter: brightness(1.3) drop-shadow(0 0 5px #fff);
-    transition: all 0.3s ease;
+.nav-right img:hover {
+  transform: scale(1.2);
+  filter: brightness(1.3) drop-shadow(0 0 5px #fff);
+}
+
+/* Hamburger Button (Hidden on Desktop) */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  color: white;
+  cursor: pointer;
+}
+
+/* 🧩 Responsive Section */
+
+/* Tablet adjustments */
+@media (max-width: 1024px) {
+  nav {
+    padding: 2vw 3vw;
+  }
+
+  .nav-right img {
+    height: 24px;
+  }
+}
+
+/* Mobile view (hamburger menu activates) */
+@media (max-width: 768px) {
+  .nav-middle {
+    display: none;
+    flex-direction: column;
+    background-color: rgb(156, 87, 8);
+    position: static;
+    transform: none;
+    width: 100%;
+    gap: 15px;
+    margin-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 0 0 10px 10px;
+  }
+
+  .nav-middle.show {
+    display: flex;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  .nav-right {
+    gap: 10px;
+  }
+
+  .nav-right img {
+    height: 28px;
+  }
 }
 
 /* Top Header Section Home Page*/
