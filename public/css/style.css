@@ -45,6 +45,20 @@ nav {
   border-bottom: 2px solid burlywood;
 }
 
+.nav-right {
+  color: white;
+  font-weight: bold;
+  height: auto;
+  gap: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-right img {
+  height: 20px;
+  width: auto;
+}
+
 /* Top Header Section Home Page*/
 .header-home{
   text-align: center;
