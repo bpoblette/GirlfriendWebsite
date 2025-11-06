@@ -4,6 +4,7 @@ This project has several goals:
 * create a cute and personal gift
 * learn node.js
 * practice and learn html and css
+
 My girlfriend loves making cute artsy gifts for me. For our anniversary, she ended up making a cute scrapbook cataloging our first year together.
 In a similar vein, I want my website to reflect our amazing journey together. To do this, this project will have:
 * A home page
