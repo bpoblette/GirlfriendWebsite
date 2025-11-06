@@ -7,9 +7,10 @@ body {
 /* Nav section */
 /* General Nav Styles */
 nav {
-  padding: 1vw 2vw;
+  padding: 10px 2vw;
+  /* compact vertical, scalable horizontal */
   background-color: rgb(156, 87, 8);
-  border-radius: 1vw;
+  border-radius: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -25,6 +26,7 @@ nav {
   color: white;
   font-weight: bold;
   font-size: 1.2rem;
+  line-height: 1.2;
 }
 
 /* Middle Section */
@@ -35,7 +37,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2vw;
+  gap: 20px;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -45,6 +47,8 @@ nav {
   color: white;
   text-decoration: none;
   font-weight: bold;
+  line-height: 1.2;
+  font-size: 1rem;
   transition: color 0.3s ease, border-bottom 0.3s ease;
 }
 
@@ -59,11 +63,12 @@ nav {
   font-weight: bold;
   display: flex;
   align-items: center;
-  gap: 1vw;
+  gap: 10px;
 }
 
 .nav-right img {
-  height: 2vw;
+  height: 20px;
+  /* smaller for compact desktop view */
   width: auto;
   transition: all 0.3s ease;
 }
@@ -88,7 +93,7 @@ nav {
 /* Tablet adjustments */
 @media (max-width: 1024px) {
   nav {
-    padding: 2vw 3vw;
+    padding: 10px 3vw;
   }
 
   .nav-right img {
@@ -127,7 +132,6 @@ nav {
     height: 28px;
   }
 }
-
 /* Top Header Section Home Page*/
 .header-home{
   text-align: center;
