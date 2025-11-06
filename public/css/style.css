@@ -129,7 +129,8 @@ nav {
   border-radius: 10px;
   color: black;
   font-size: larger;
-  background-color: goldenrod;
+  background-color: #eec170; 
+  /* goldenrod could be used as alternative */
   line-height: 1.6;
 }
 
