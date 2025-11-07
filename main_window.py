@@ -53,11 +53,10 @@ class MainWindow(QMainWindow):
     self.label.setText("You're cute :)") #change this so that the label updates its text
     def wait_and_close_browser():
       self.close()
-      url = "http://localhost:3000"
+      url = "https://brandonandbailey.com/"
       subprocess.Popen(["explorer.exe", url])
 
     try:
-      subprocess.Popen(["node", "index.js"], shell=False)
       QTimer.singleShot(2000, wait_and_close_browser)
     except Exception as e:
       print(f"An error occurred: {e}")
