@@ -25,3 +25,7 @@ A brief overview of our relationship. This page will also go over the biggest ad
 ## Photo Page
 This section will have several of our photos from throughout the year, followed by a description of the photo. The images will be ordered by upload date
 ![IMG_7690](https://github.com/user-attachments/assets/757be90e-b33a-4dce-882b-079fba7dd022)
+
+
+to start the postgres server:
+* sudo service postgresql start
