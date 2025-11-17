@@ -243,3 +243,63 @@ footer {
   display: block;
   text-align: center;
 }
+
+/* About page styles*/
+.header-about {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.about-left,
+.about-right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header-about p {
+  max-width: 450px;
+  text-align: center;
+  background-color: white;
+  color: black;
+  padding: 20px 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.header-about p:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.header-about-img {
+  display: block;
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  width: 60%;
+  height: auto;
+  transition: width 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.header-about-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+.bold {
+  font-weight: bold;
+  font-size: x-large;
+}

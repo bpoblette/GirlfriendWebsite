@@ -4,6 +4,7 @@ const path = require('path');
 const app = express();
 const PORT = 3000;
 const pool = require('./db.js');
+const { error } = require('console');
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
@@ -22,11 +23,20 @@ app.get('/photos', (req, res) => {
 
 app.get('/test-db', async (req, res) => {
   try {
-    const result = await pool.query({});
+    const result = await pool.query({
+      text: 'SELECT NOW()',
+      rowMode: 'array',
+      statement_timeout: 5000
+    });
+    console.log('DB test success: ', result.rows[0][0]);
+    res.json({ time: result.rows[0][0] });
   } catch (err) {
-    
+    console.error('Database connection errors:',err);
+    res.status(500).json({ error: 'Database query failed' });
   }
 });
+
+
 
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
