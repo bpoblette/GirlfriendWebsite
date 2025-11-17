@@ -252,6 +252,8 @@ footer {
   width: 80%;
   margin: 0 auto;
   padding: 40px;
+  gap: 20px;
+  flex-wrap: wrap;
 }
 
 .about-left,
@@ -298,8 +300,32 @@ footer {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-
 .bold {
   font-weight: bold;
   font-size: x-large;
+}
+
+@media screen and (max-width: 768px) {
+  .header-about {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  .about-left,
+  .about-right {
+    width: 100;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 20;
+  }
+
+  .header-about-img {
+    width: 80;
+    max-width: 300px;
+  }
+
+  .header-about p {
+    max-width: 90%;
+    padding: 15px;
+  }
 }

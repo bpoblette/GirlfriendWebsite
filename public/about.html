@@ -1,65 +1,65 @@
 <!DOCTYPE html>
 <html>
-    <head>
-      <title>About</title>
-      <link rel="stylesheet" href="css/style.css">
-      <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    </head>
-    <body>
-      <nav>
-        <div class="nav-left">Brandon and Bailey</div>
-        <ul class="nav-middle">
-          <li><a href="/">Home</a></li>
-          <li><a href="/photos">Photos</a></li>
-          <li><a href="/about">About</a></li>
-        </ul>
-        <section class="nav-right">
-          <div class="">Check out my Github</div>
-          <a href="https://github.com/bpoblette/GirlfriendWebsite" target="_blank" rel="noopener noreferrer"><img
-              src="img/icons/github-mark-white.png" alt="blank"></a>
-          <button class="hamburger" aria-label="Toggle Menu">☰</button>
-        </section>
-      </nav>
-      <header class="header-home">
-        <h1>
-          About Page
-        </h1>
-      </header>
-      <section class="header-about">
-        <div class="about-left">
-          <p>
-            <span class="bold">This is Bailey<br></span>
-            She is one of the most amazing and passionate people you'll ever meet. Born with a green thumb,
-            no one takes care of plants better than her.
-          </p>
-        </div>
-        <div class="about-right">
-          <img src="img/Website Photos/about_page_backup_bailey.jpg" alt="Bailey photo" class="header-about-img">
-        </div>
+  <head>
+    <title>About</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">Brandon and Bailey</div>
+      <ul class="nav-middle">
+        <li><a href="/">Home</a></li>
+        <li><a href="/photos">Photos</a></li>
+        <li><a href="/about">About</a></li>
+      </ul>
+      <section class="nav-right">
+        <div class="">Check out my Github</div>
+        <a href="https://github.com/bpoblette/GirlfriendWebsite" target="_blank" rel="noopener noreferrer"><img
+            src="img/icons/github-mark-white.png" alt="blank"></a>
+        <button class="hamburger" aria-label="Toggle Menu">☰</button>
       </section>
-      <section class="header-about">
-        <div class="about-left">
-          <img src="img/Website Photos/about_page_brandon.jpg" alt="Brandon photo" class="header-about-img">
-        </div>
-        <div class="about-right">
-          <p>
-            <span class="bold">...And this is Brandon<br></span>
-            Recent college grad out of Gonzaga University, Brandon likes spending most of his 
-            freetime hanging out with his girlfriend, Bailey. (I was forced to say this)
-            Best known for his obsession with Kpop Demon Hunters, it is truly a wonder
-            this guy found a girlfriend.
-          </p>
-        </div>
-      </section>
-    </body>
-      <script>
-        const hamburger = document.querySelector('.hamburger');
-        const navMiddle = document.querySelector('.nav-middle');
+    </nav>
+    <header class="header-home">
+      <h1>
+        About Page
+      </h1>
+    </header>
+    <section class="header-about">
+      <div class="about-left">
+        <p>
+          <span class="bold">This is Bailey<br></span>
+          She is one of the most amazing and passionate people you'll ever meet. Born with a green thumb,
+          no one takes care of plants better than her.
+        </p>
+      </div>
+      <div class="about-right">
+        <img src="img/Website Photos/about_page_backup_bailey.jpg" alt="Bailey photo" class="header-about-img">
+      </div>
+    </section>
+    <section class="header-about">
+      <div class="about-left">
+        <img src="img/Website Photos/about_page_brandon.jpg" alt="Brandon photo" class="header-about-img">
+      </div>
+      <div class="about-right">
+        <p>
+          <span class="bold">...And this is Brandon<br></span>
+          Recent college grad out of Gonzaga University, Brandon likes spending most of his 
+          freetime hanging out with his girlfriend, Bailey. (I was forced to say this)
+          Best known for his obsession with Kpop Demon Hunters, it is truly a wonder
+          this guy found a girlfriend.
+        </p>
+      </div>
+    </section>
+  </body>
+  <script>
+    const hamburger = document.querySelector('.hamburger');
+    const navMiddle = document.querySelector('.nav-middle');
 
-        hamburger.addEventListener('click', () => {
-          navMiddle.classList.toggle('show');
-        });
-      </script>
+    hamburger.addEventListener('click', () => {
+      navMiddle.classList.toggle('show');
+    });
+  </script>
 </html>
 
