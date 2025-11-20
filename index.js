@@ -39,7 +39,6 @@ app.get('/test-db', async (req, res) => {
 
 /* function for the unsubscribe endpoint */
 
-
 app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });

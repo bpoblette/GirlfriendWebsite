@@ -170,10 +170,26 @@ footer img:hover {
   transform: scale(1.2);
 }
 
-footer form {
-  border-radius: 20px;
-  border-color: black;
-  border: black;
+input[type=text],
+input[type=submit] {
+  max-width: 250px;
+  padding: 12px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+footer button {
+  background-color: rgb(250, 241, 230);
+  border: 1px solid #ccc;
+  max-width: 250px;
+  padding: 12px;
+  border-radius: 15px;
+}
+
+footer button:hover {
+  opacity: 0.8;
 }
 
 /* Top Header Section Home Page*/
