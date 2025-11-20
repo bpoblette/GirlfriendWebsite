@@ -284,7 +284,7 @@ div.container:hover{
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  background-attachment:fixed;
+  background-attachment: fixed;
 }
 
 .header-about {
@@ -392,13 +392,10 @@ div.container:hover{
     padding: 15px;
   }
 
-  .header-about img {
-    width: 80%;
-    max-width: 300px;
-  }
-
+  .header-about img,
   .section-about-2 img {
-    width: 80%;
-    max-width: 400;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
   }
 }
