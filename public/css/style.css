@@ -188,6 +188,7 @@ footer button {
   max-width: 150px;
   padding: 12px;
   border-radius: 15px;
+  color: black;
 }
 
 footer button:hover {
