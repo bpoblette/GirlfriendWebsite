@@ -2,6 +2,8 @@
 body {
   font-family: Baskerville Old Face;
   background-color: rgb(250, 241, 230);
+  margin: 0;
+  padding: 0;
 }
 
 /* Nav section */
@@ -17,6 +19,19 @@ nav {
   width: 100%;
   box-sizing: border-box;
   z-index: 1000;
+}
+
+nav::after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  border-radius: 0 0 10px 10px;
+  pointer-events: none;
 }
 
 .nav-left {
@@ -245,6 +260,14 @@ footer {
 }
 
 /* About page styles*/
+.about-page {
+  background-image: url("../img/background/Lovepik_com-401157348-pink-love-background.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: scroll;
+}
+
 .header-about {
   display: flex;
   justify-content: space-between;
@@ -264,12 +287,27 @@ footer {
   align-items: center;
 }
 
-.header-about p {
+/* Section 2 layout */
+.section-about-2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+  padding: 40px;
+  gap: 20px;
+  flex-wrap: wrap;
+  max-width: 600px;
+}
+
+/* shared styles */
+.header-about p,
+.section-about-2 p {
   max-width: 450px;
   text-align: center;
   background-color: white;
   color: black;
-  padding: 20px 20px;
+  padding: 20px;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   display: inline-block;
@@ -277,25 +315,34 @@ footer {
   transition: all 0.2s ease;
 }
 
-.header-about p:hover {
+.header-about p:hover,
+.section-about-2 p:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.header-about-img {
+.header-about img,
+.section-about-2 img {
   display: block;
   background-color: #fff;
   padding: 10px;
   border: 1px solid #ccc;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  width: 60%;
   height: auto;
-  transition: width 0.3s ease;
   transition: all 0.3s ease;
 }
 
-.header-about-img:hover {
+.header-about img {
+  width: 60%;
+}
+
+.section-about-2 img {
+  width: 100%;
+}
+
+.header-about img:hover,
+.section-about-2 img:hover {
   transform: scale(1.05);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
@@ -306,26 +353,29 @@ footer {
 }
 
 @media screen and (max-width: 768px) {
-  .header-about {
+
+  .header-about,
+  .section-about-2 {
     flex-direction: column;
     padding: 20px;
+    text-align: center;
   }
 
   .about-left,
   .about-right {
-    width: 100;
-    justify-content: center;
-    text-align: center;
-    margin-bottom: 20;
+    width: 100%;
+    margin-bottom: 20px;
   }
 
-  .header-about-img {
-    width: 80;
-    max-width: 300px;
-  }
-
-  .header-about p {
+  .header-about p,
+  .section-about-2 p {
     max-width: 90%;
     padding: 15px;
+  }
+
+  .header-about img,
+  .section-about-2 img {
+    width: 80%;
+    max-width: 300px;
   }
 }
