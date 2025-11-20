@@ -35,6 +35,9 @@ app.get('/test-db', async (req, res) => {
   }
 });
 
+/* function for the subscribe endpoint */
+
+/* function for the unsubscribe endpoint */
 
 
 app.listen(PORT, () => {

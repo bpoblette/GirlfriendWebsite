@@ -170,6 +170,12 @@ footer img:hover {
   transform: scale(1.2);
 }
 
+footer form {
+  border-radius: 20px;
+  border-color: black;
+  border: black;
+}
+
 /* Top Header Section Home Page*/
 .header-home{
   text-align: center;
