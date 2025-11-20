@@ -19,8 +19,6 @@ nav {
   width: 100%;
   box-sizing: border-box;
   z-index: 1000;
-  top: 0;
-  margin-top: 0;
 }
 
 nav::after {
