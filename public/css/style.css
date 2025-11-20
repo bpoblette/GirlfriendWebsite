@@ -222,7 +222,8 @@ div.container:hover{
 }
 
 .header-section-2 img {
-  width: 450px;
+  width: 100%;
+  max-width: 450px;
   height: auto;
   transition: width 0.3s ease;
   flex-shrink: 0;
@@ -240,6 +241,12 @@ div.container:hover{
   .header-section-2 {
     flex-direction: column;
     gap: 10px;
+    align-items: center;
+  }
+
+  .header-section-2 img {
+    width: 80%;
+    max-width: 300px;
   }
 }
 
