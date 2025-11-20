@@ -249,6 +249,7 @@ div.container:hover{
   .header-section-2 img {
     width: 80%;
     max-width: 300px;
+    margin-left: 0;
   }
 }
 
