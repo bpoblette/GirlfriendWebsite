@@ -1,8 +1,5 @@
-import crypto from 'crypto';
-import pool from '../db';
-
-dotenv.config();
-
+const crypto = require('crypto'); 
+const pool = require('../db.js');
 
 // Helper to generate tokens
 const generateToken = () => crypto.randomBytes(32).toString('hex');
