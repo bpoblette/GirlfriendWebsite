@@ -1,15 +1,8 @@
-import pkg from 'pg';
-import dotenv from 'dotenv';
 import crypto from 'crypto';
+import pool from '../db';
 
 dotenv.config();
 
-const { Pool } = pkg;
-
-// Postgres pool
-const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
-});
 
 // Helper to generate tokens
 const generateToken = () => crypto.randomBytes(32).toString('hex');
@@ -90,4 +83,4 @@ class Subscription {
   }
 }
 
-export { Subscription, pool };
+module.exports = Subscription;
