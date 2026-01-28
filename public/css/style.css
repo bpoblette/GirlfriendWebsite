@@ -263,7 +263,7 @@ footer button:hover {
 .header-home{
   text-align: center;
   padding: 40px;
-  border-radius: 10px;
+  border-radius: 0 0 10px 10px;
   color: black;
   font-size: larger;
   background-color: goldenrod; 
