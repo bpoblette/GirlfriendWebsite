@@ -14,7 +14,7 @@ const replaceHTML = function (html, obj) {
   });
 }
 
-const gerRandomImage = function (folderpath) {
+const getRandomImage = function (folderPath) {
   const files = fs.readdirSync(folderPath).filter(file =>
     /\.(jpg|jpeg|png|gif)$/i.test(file) // only images
   );
@@ -24,4 +24,4 @@ const gerRandomImage = function (folderpath) {
   return path.join(folderPath, files[randomIndex]);
 }
 
-module.exports = { validateEmail, replaceHTML, gerRandomImage };
+module.exports = { validateEmail, replaceHTML, getRandomImage };
