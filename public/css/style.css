@@ -82,6 +82,7 @@ nav::after {
   font-weight: inherit;
   border-bottom: 2px solid transparent;
   position: relative;
+  transition: color 0.3s ease, border-bottom-color 0.3s ease;
 }
 .nav-right a:hover {
   color: burlywood;
