@@ -11,6 +11,8 @@ const pool = require('./db.js');
 
 app.use(express.json());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use('/img', express.static('public/img'));
+
 
 const transporter = nodemailer.createTransport({
   service: 'gmail', 
@@ -107,6 +109,31 @@ app.get('/unsubscribe/:token', async (req, res) => {
   const subscriber = await Subscription.unsubscribe(req.params.token);
   if (!subscriber) return res.status(400).send('Invalid or expired token.');
   res.send('You have been unsubscribed.');
+});
+
+// fucntion for photos page
+app.get('/api/photos', (req,res) => {
+  const page = parseInt(req.query.page || 0);
+  const limit = 15;
+
+  const folder = path.join(__dirname, 'public', 'img\Bailey Photos');
+
+  const files = fs.readdirSync(folder)
+    .filter(f => /\.(jpg|jpeg|png|webp)$/i.test(f))
+    .sort(); // optional but recommended
+
+  const start = page * limit;
+  const end = start + limit;
+
+  const photos = files.slice(start, end).map(file => ({
+    src: `/img/Bailey Photos/${encodeURIComponent(file)}`
+  }));
+
+  res.json({
+    photos,
+    total: files.length,
+    page
+  })
 });
 
 app.listen(PORT, () => {
