@@ -67,21 +67,18 @@
       <img src="img/Website Photos/IMG_1068.jpg" alt="about page couple photo">
     </section>
     <footer>
-      <div class="newsletter-container">
+      <div class="newsletter-container" id="subscribe-box">
         <h3>Subscribe to our newsletter!</h3>
         <p>
           Stay updated with our adventures by subscribing to our newsletter!
           Weekly updates and random daily photos straight to your inbox.
         </p>
-        <form action="http://localhost:3000/subscribe" method="POST" class="newsletter-form">
+      
+        <div class="error-message" style="display:none;color:red;margin:5px 0;"></div>
+      
+        <form class="newsletter-form">
           <div class="input-group">
-            <svg class="input-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 
-                                 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 
-                                 2-2z" stroke-width="2" stroke-linecap="round" />
-              <polyline points="22,6 12,13 2,6" stroke-width="2" stroke-linecap="round" />
-            </svg>
-            <input type="text" name="Email" placeholder="Email Address">
+            <input type="text" name="Email" placeholder="Email Address" />
           </div>
           <button type="submit">Subscribe</button>
         </form>
