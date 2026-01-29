@@ -3,6 +3,7 @@ const pool = require('../db.js');
 
 // Helper to generate tokens
 const generateToken = () => crypto.randomBytes(32).toString('hex');
+const normalizeEmail = (email) => email?.trim().toLowerCase();
 
 // Subscription model
 class Subscription {
@@ -14,9 +15,11 @@ class Subscription {
     this.subscribed_at = subscribed_at;
   }
 
+
   // Create a new subscriber
   static async create(email) {
     const token = generateToken();
+    const normalizedEmail = normalizeEmail(email);
 
     const result = await pool.query(
       `
@@ -25,7 +28,7 @@ class Subscription {
       ON CONFLICT (email) DO UPDATE SET token = EXCLUDED.token
       RETURNING *
       `,
-      [email, token]
+      [normalizedEmail, token]
     );
 
     return new Subscription(result.rows[0]);
@@ -33,9 +36,11 @@ class Subscription {
 
   // Find subscriber by email
   static async findByEmail(email) {
+    const normalizedEmail = normalizeEmail(email);
+
     const result = await pool.query(
       'SELECT * FROM subscribers WHERE email = $1',
-      [email]
+      [normalizedEmail]
     );
     if (!result.rows.length) return null;
     return new Subscription(result.rows[0]);

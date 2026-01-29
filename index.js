@@ -50,7 +50,7 @@ app.get('/test-db', async (req, res) => {
 /* function for the subscribe endpoint */
 app.post('/subscribe', async (req, res) => {
   console.log('Request body:', req.body);
-  const { email } = req.body;
+  const email = req.body.email?.trim().toLowerCase();
 
   if (!email || !validateEmail(email)) {
     return res.status(400).json({ message: 'Invalid email' });
